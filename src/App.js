@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AnimationOnLoad from "./components/AnimationOnLoad";
+import TimelessWebsite from "./assets/TimelessWebsite.mp4";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -17,8 +18,25 @@ function App() {
       {loading ? (
         <AnimationOnLoad />
       ) : (
-        <div className="text-2xl font-bold text-center p-4 w-full animate-animateOpacity">
-          TIMELESS
+        <div className="animate-animateOpacity w-full">
+          {/* Background video */}
+          {/* <div className="w-full h-screen">
+            <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.7)]"></div>
+            <video
+              src={TimelessWebsite}
+              autoPlay
+              loop
+              muted
+              className="w-full h-full object-cover"
+            ></video>
+            <div className="absolute w-full h-full top-0 text-white text-4xl font-bold text-center p-16 tracking-widest">
+              TIMELESS
+            </div>
+          </div> */}
+
+          <div className="text-4xl font-bold text-center p-16 tracking-widest">
+            TIMELESS
+          </div>
         </div>
       )}
     </>
