@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AnimationOnLoad from "./components/AnimationOnLoad";
-import TimelessWebsite from "./assets/TimelessWebsite.mp4";
+// import TimelessWebsite from "./assets/TimelessWebsite.mp4";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -34,9 +35,7 @@ function App() {
             </div>
           </div> */}
 
-          <div className="text-4xl font-bold text-center p-16 tracking-widest">
-            TIMELESS
-          </div>
+          <Navbar />
         </div>
       )}
     </>
