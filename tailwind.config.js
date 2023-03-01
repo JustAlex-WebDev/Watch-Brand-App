@@ -2,6 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      xs: "500px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xlg: "1124px",
+      xl: "1280px",
+    },
     extend: {
       animation: {
         animateOpacity: "animateOpacity 1s ease",
