@@ -35,7 +35,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.25, duration: 0.5 }}
-            className="text-sm xs:text-base lg:text-lg text-left"
+            className="text-sm xs:text-base lg:text-lg text-justify"
           >
             Explore the Timeless collection of prestigious, high-precision
             timepieces. Timeless offers a wide assortment of Classic and
