@@ -1,4 +1,4 @@
-# TIMELESS - Watch-Brand-Website
+# TIMELESS - Watch-Brand-App
 
 TIMELESS is not only some e-commerce application, it is a journey.
 Not only would you be capable of configuring your own watch, but search through a whole lot of collections of watches too and save them in your favourites!
