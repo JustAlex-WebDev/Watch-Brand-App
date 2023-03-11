@@ -2,7 +2,7 @@
 
 TIMELESS is not only some e-commerce application, it is a journey.
 Not only would you be capable of configuring your own watch, but search through a whole lot of collections of watches too and save them in your favourites!
-This main reason for creating this project is to boost my design skills, improve the way my code is written and to test some new and exciting technologies.
+The main reason for creating this project is to boost my design skills, improve the way my code is written and to test some new and exciting technologies.
 
 ## Technologies Used
 
