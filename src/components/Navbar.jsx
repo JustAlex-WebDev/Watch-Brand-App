@@ -6,10 +6,12 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import SearchModal from "./SearchModal";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [fav, setFav] = useState(false);
+  const [openSearchModal, setOpenSearchModal] = useState(false);
   const navRef = useRef();
 
   // useEffect(() => {
@@ -56,8 +58,13 @@ const Navbar = () => {
         <div className="flex justify-center items-center gap-4">
           <AiOutlineSearch
             size={20}
+            onClick={() => setOpenSearchModal(true)}
             className="hover:text-green-900 hover:cursor-pointer"
             title="Search"
+          />
+          <SearchModal
+            openSearchModal={openSearchModal}
+            onClose={() => setOpenSearchModal(false)}
           />
 
           <button
@@ -70,7 +77,7 @@ const Navbar = () => {
               <AiOutlineHeart
                 onClick={() => setFav(!fav)}
                 size={20}
-                title="Your selection"
+                title="Your Selection"
               />
             )}
           </button>
