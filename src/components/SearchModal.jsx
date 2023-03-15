@@ -20,8 +20,8 @@ const SearchModal = ({
           onClick={(e) => e.stopPropagation()}
           className={
             openSearchModal
-              ? "bg-white border-2 border-black shadow-xl w-[75%] h-[25%] rounded-3xl flex flex-col animate-animateOpacity2"
-              : "bg-white border-2 border-black shadow-xl w-[75%] h-[25%] rounded-3xl flex flex-col"
+              ? "bg-white shadow-2xl w-[75%] max-w-2xl h-[25%] rounded-3xl flex flex-col animate-animateOpacity2"
+              : "bg-white shadow-2xl w-[75%] max-w-2xl h-[25%] rounded-3xl flex flex-col"
           }
         >
           <div className="w-full flex justify-end p-2">
