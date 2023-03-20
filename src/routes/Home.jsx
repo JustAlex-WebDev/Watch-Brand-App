@@ -1,6 +1,7 @@
 import React from "react";
 import { motion as m } from "framer-motion";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -49,9 +50,12 @@ const Home = () => {
             transition={{ delay: 1.5, duration: 0.5 }}
             className="flex justify-center items-center gap-8 text-sm xs:text-base"
           >
-            <div className="p-2 px-4 border border-green-900 text-green-900 hover:text-white hover:bg-green-900 rounded-2xl cursor-pointer transition-all">
+            <Link
+              to="/watches"
+              className="p-2 px-4 border border-green-900 text-green-900 hover:text-white hover:bg-green-900 rounded-2xl cursor-pointer transition-all"
+            >
               Watch Finder
-            </div>
+            </Link>
             <div className="p-2 text-green-900 hover:opacity-60 rounded-2xl cursor-pointer transition-all">
               Configure your watch
             </div>
