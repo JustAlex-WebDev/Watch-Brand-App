@@ -28,7 +28,7 @@ const Watches = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 0.75, ease: "easeOut" }}
       exit={{ opacity: 1 }}
-      className="text-grey-900 absolute top-0 left-0 w-full h-full lg:px-48 px-16"
+      className="text-grey-900 bg-[#f5f5f5] absolute top-0 left-0 w-full lg:px-48 px-16"
     >
       <main className="main-div mb-64">
         <div className="mt-56 mb-16 p-2 overflow-hidden">
@@ -45,11 +45,98 @@ const Watches = () => {
         <div className="flex flex-col justify-center items-center gap-4">
           <button
             onClick={() => setFavourites(!favourites)}
-            className="bg-green-800 text-white p-2 hover:opacity-50"
+            className="bg-green-800 text-white p-2 hover:opacity-50 tracking-wider rounded-lg"
           >
-            Click to save
+            Save Button
           </button>
           {favourites ? <div>saved</div> : <div>not saved</div>}
+        </div>
+        <div className="bg-[#f5f5f5] mt-16 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2 justify-between items-center w-[80%] m-auto p-2">
+          <div className="flex rounded-sm justify-center items-center bg-white h-80">
+            <div className="flex flex-col justify-center w-full items-center">
+              <div className="h-52 w-[70%] flex justify-center items-center mb-4">
+                <img
+                  className="w-auto h-auto max-h-52 hover:scale-105 transition-all cursor-pointer"
+                  src="/images/Screenshot_2.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="flex flex-col text-center justify-center items-center">
+                <div className="font-sans font-semibold tracking-wider">
+                  DAY-DATE 40
+                </div>
+                <div className="font-sans text-sm">Oyster, 40 mm, platinum</div>
+              </div>
+            </div>
+          </div>
+          <div className="flex rounded-sm justify-center items-center bg-white h-80">
+            <div className="flex flex-col justify-center w-full items-center gap-2">
+              <div className="h-52 w-[70%] flex justify-center items-center mb-2">
+                <img
+                  className="w-auto h-auto max-h-52 hover:scale-105 transition-all cursor-pointer"
+                  src="/images/Screenshot_2.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="flex flex-col text-center justify-center items-center">
+                <div className="font-sans font-semibold tracking-wider">
+                  DAY-DATE 40
+                </div>
+                <div className="font-sans text-sm">Oyster, 40 mm, platinum</div>
+              </div>
+            </div>
+          </div>
+          <div className="flex rounded-sm justify-center items-center bg-white h-80">
+            <div className="flex flex-col justify-center w-full items-center gap-2">
+              <div className="h-52 w-[70%] flex justify-center items-center mb-2">
+                <img
+                  className="w-auto h-auto max-h-52 hover:scale-105 transition-all cursor-pointer"
+                  src="/images/Screenshot_2.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="flex flex-col text-center justify-center items-center">
+                <div className="font-sans font-semibold tracking-wider">
+                  DAY-DATE 40
+                </div>
+                <div className="font-sans text-sm">Oyster, 40 mm, platinum</div>
+              </div>
+            </div>
+          </div>
+          <div className="flex rounded-sm justify-center items-center bg-white h-80">
+            <div className="flex flex-col justify-center w-full items-center gap-2">
+              <div className="h-52 w-[70%] flex justify-center items-center mb-2">
+                <img
+                  className="w-auto h-auto max-h-52 hover:scale-105 transition-all cursor-pointer"
+                  src="/images/Screenshot_2.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="flex flex-col text-center justify-center items-center">
+                <div className="font-sans font-semibold tracking-wider">
+                  DAY-DATE 40
+                </div>
+                <div className="font-sans text-sm">Oyster, 40 mm, platinum</div>
+              </div>
+            </div>
+          </div>
+          <div className="flex rounded-sm justify-center items-center bg-white h-80">
+            <div className="flex flex-col justify-center w-full items-center gap-2">
+              <div className="h-52 w-[70%] flex justify-center items-center mb-2">
+                <img
+                  className="w-auto h-auto max-h-52 hover:scale-105 transition-all cursor-pointer"
+                  src="/images/Screenshot_2.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="flex flex-col text-center justify-center items-center">
+                <div className="font-sans font-semibold tracking-wider">
+                  DAY-DATE 40
+                </div>
+                <div className="font-sans text-sm">Oyster, 40 mm, platinum</div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       <m.div
