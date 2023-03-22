@@ -1,16 +1,16 @@
 export const watches = [
   {
     id: 1,
-    name: "DAY-DATE",
-    description: "The ultimate watch of prestige",
+    name: "DAY-DATE 40",
+    description: "Oyster, 40 mm, platinum",
     price: 100000,
-    img: "/images/image1.jpg",
+    img: "/images/Screenshot_2.jpg",
     numberOfUnits: 1,
     category: "Classic Watches",
   },
   {
     id: 2,
-    name: "DATEJUST",
+    name: "DATEJUST 36",
     description: "The classic watch of reference",
     price: 85000,
     img: "/images/image1.jpg",
@@ -19,7 +19,7 @@ export const watches = [
   },
   {
     id: 3,
-    name: "OYSTER PERPETUAL",
+    name: "OYSTER PERPETUAL 41",
     description: "The essence of the Oyster",
     price: 80000,
     img: "/images/image1.jpg",
@@ -28,7 +28,7 @@ export const watches = [
   },
   {
     id: 4,
-    name: "LADY-DATEJUST",
+    name: "LADY-DATEJUST 31",
     description: "Graceful elegance",
     price: 82000,
     img: "/images/image1.jpg",
