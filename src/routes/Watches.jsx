@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion as m } from "framer-motion";
 import Footer from "../components/Footer";
+import { watches } from "../data";
+import Item from "../components/Item";
 
 const favouritesData = JSON.parse(
   window.localStorage.getItem("MY_FAVOURITES_STATE")
@@ -8,6 +10,7 @@ const favouritesData = JSON.parse(
 
 const Watches = () => {
   const [favourites, setFavourites] = useState(false);
+  const [items, setItems] = useState(watches);
 
   useEffect(() => {
     if (favouritesData !== null) setFavourites(JSON.parse(favouritesData));
@@ -51,92 +54,10 @@ const Watches = () => {
           </button>
           {favourites ? <div>saved</div> : <div>not saved</div>}
         </div>
-        <div className="bg-[#f5f5f5] mt-16 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2 justify-between items-center w-[80%] m-auto p-2">
-          <div className="flex rounded-sm justify-center items-center bg-white h-80">
-            <div className="flex flex-col justify-center w-full items-center">
-              <div className="h-52 w-[70%] flex justify-center items-center mb-4">
-                <img
-                  className="w-auto h-auto max-h-52 hover:scale-105 transition-all cursor-pointer"
-                  src="/images/Screenshot_2.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="flex flex-col text-center justify-center items-center">
-                <div className="font-sans font-semibold tracking-wider">
-                  DAY-DATE 40
-                </div>
-                <div className="font-sans text-sm">Oyster, 40 mm, platinum</div>
-              </div>
-            </div>
-          </div>
-          <div className="flex rounded-sm justify-center items-center bg-white h-80">
-            <div className="flex flex-col justify-center w-full items-center gap-2">
-              <div className="h-52 w-[70%] flex justify-center items-center mb-2">
-                <img
-                  className="w-auto h-auto max-h-52 hover:scale-105 transition-all cursor-pointer"
-                  src="/images/Screenshot_2.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="flex flex-col text-center justify-center items-center">
-                <div className="font-sans font-semibold tracking-wider">
-                  DAY-DATE 40
-                </div>
-                <div className="font-sans text-sm">Oyster, 40 mm, platinum</div>
-              </div>
-            </div>
-          </div>
-          <div className="flex rounded-sm justify-center items-center bg-white h-80">
-            <div className="flex flex-col justify-center w-full items-center gap-2">
-              <div className="h-52 w-[70%] flex justify-center items-center mb-2">
-                <img
-                  className="w-auto h-auto max-h-52 hover:scale-105 transition-all cursor-pointer"
-                  src="/images/Screenshot_2.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="flex flex-col text-center justify-center items-center">
-                <div className="font-sans font-semibold tracking-wider">
-                  DAY-DATE 40
-                </div>
-                <div className="font-sans text-sm">Oyster, 40 mm, platinum</div>
-              </div>
-            </div>
-          </div>
-          <div className="flex rounded-sm justify-center items-center bg-white h-80">
-            <div className="flex flex-col justify-center w-full items-center gap-2">
-              <div className="h-52 w-[70%] flex justify-center items-center mb-2">
-                <img
-                  className="w-auto h-auto max-h-52 hover:scale-105 transition-all cursor-pointer"
-                  src="/images/Screenshot_2.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="flex flex-col text-center justify-center items-center">
-                <div className="font-sans font-semibold tracking-wider">
-                  DAY-DATE 40
-                </div>
-                <div className="font-sans text-sm">Oyster, 40 mm, platinum</div>
-              </div>
-            </div>
-          </div>
-          <div className="flex rounded-sm justify-center items-center bg-white h-80">
-            <div className="flex flex-col justify-center w-full items-center gap-2">
-              <div className="h-52 w-[70%] flex justify-center items-center mb-2">
-                <img
-                  className="w-auto h-auto max-h-52 hover:scale-105 transition-all cursor-pointer"
-                  src="/images/Screenshot_2.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="flex flex-col text-center justify-center items-center">
-                <div className="font-sans font-semibold tracking-wider">
-                  DAY-DATE 40
-                </div>
-                <div className="font-sans text-sm">Oyster, 40 mm, platinum</div>
-              </div>
-            </div>
-          </div>
+        <div className="mt-16 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2 justify-between items-center w-full sm:w-[80%] m-auto p-2">
+          {items.map((item) => (
+            <Item item={item} key={item.id} />
+          ))}
         </div>
       </main>
       <m.div

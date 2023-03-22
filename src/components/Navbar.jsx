@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="main-div p-4 bg-trnasparent z-10 relative mb-[49rem]">
+    <div className="main-div p-4 bg-trnasparent z-10 relative">
       {/* Logo */}
       <div className="flex justify-center">
         <Link

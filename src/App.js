@@ -5,6 +5,7 @@ import AnimationOnLoad from "./components/AnimationOnLoad";
 import Navbar from "./components/Navbar";
 import Watches from "./routes/Watches";
 import Home from "./routes/Home";
+import Watch from "./routes/Watch";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -29,6 +30,7 @@ function App() {
             <Routes location={location} key={location.pathName}>
               <Route path="/" element={<Home />} />
               <Route path="/watches" element={<Watches />} />
+              <Route path="/watches/:id" element={<Watch />} />
             </Routes>
           </AnimatePresence>
         </div>
