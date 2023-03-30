@@ -6,7 +6,7 @@ const Item = ({ item }) => {
   return (
     <Link
       to={"/watches/" + item.id}
-      className="flex rounded-sm justify-center items-center bg-white h-80 group cursor-pointer relative"
+      className="flex rounded-sm justify-center items-center bg-white shadow-md h-80 group cursor-pointer relative"
     >
       <div className="absolute top-2 left-2 w-8 h-8 rounded-full flex justify-center items-center bg-[#dddddd] hover:bg-green-800 transition-all">
         <AiFillHeart
