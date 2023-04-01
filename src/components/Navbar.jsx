@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import {
   AiOutlineMenu,
   AiOutlineClose,
@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="main-div p-4 bg-trnasparent z-10 relative">
+    <div className="main-div p-4 bg-trnasparent z-10 relative mb-[49rem]">
       {/* Logo */}
       <div className="flex justify-center">
         <Link
