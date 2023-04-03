@@ -6,10 +6,12 @@ import Navbar from "./components/Navbar";
 import Watches from "./routes/Watches";
 import Home from "./routes/Home";
 import Watch from "./routes/Watch";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
+  const [scrollToTop, setScrollToTop] = useState(false);
 
   // Animation On Load
   useEffect(() => {
@@ -19,6 +21,20 @@ function App() {
     }, 3000);
   }, []);
 
+  // Scroll To Top Button
+  const scrollToTopIndicator = () => {
+    if (window.scrollY >= 40) {
+      setScrollToTop(true);
+    } else {
+      setScrollToTop(false);
+    }
+  };
+  window.addEventListener("scroll", scrollToTopIndicator);
+
+  const scrollToTopFunction = () => {
+    document.documentElement.scrollTop = 0;
+  };
+
   return (
     <>
       {loading ? (
@@ -26,6 +42,10 @@ function App() {
       ) : (
         <div className="animate-animateOpacity w-full">
           <Navbar />
+          <ScrollToTop
+            scrollToTopIndicator={scrollToTop}
+            scrollToTopFunction={scrollToTopFunction}
+          />
           <AnimatePresence initial={false}>
             <Routes location={location} key={location.pathName}>
               <Route path="/" element={<Home />} />
