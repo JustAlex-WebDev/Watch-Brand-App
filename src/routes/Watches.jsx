@@ -34,10 +34,10 @@ const Watches = () => {
       className="text-grey-900 bg-[#fff] absolute top-0 left-0 w-full lg:px-48 px-16"
     >
       <main className="main-div mb-64">
-        <div className="mt-48 mb-16 p-2 overflow-hidden">
+        <div className="mt-48 mb-16 p-2">
           <m.h1
-            initial={{ y: "100%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
             className="text-3xl lg:text-4xl text-center tracking-widest"
           >
