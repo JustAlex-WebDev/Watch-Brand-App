@@ -6,6 +6,7 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useFavSection } from "../context/FavContext";
 import FavouritesMenu from "./FavouritesMenu";
 import MainMenu from "./MainMenu";
 import SearchModal from "./SearchModal";
@@ -14,6 +15,7 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [fav, setFav] = useState(false);
   const [openSearchModal, setOpenSearchModal] = useState(false);
+  const { favSection } = useFavSection();
   const searchInputRef = useRef();
 
   const clickToFocus = () => {
@@ -64,18 +66,25 @@ const Navbar = () => {
             onClick={() => setFav(!fav)}
             className={
               openSearchModal
-                ? "hover:text-green-900 hover:cursor-pointer z-30"
-                : "hover:text-green-900 hover:cursor-pointer z-40"
+                ? "hover:text-green-900 hover:cursor-pointer z-30 relative"
+                : "hover:text-green-900 hover:cursor-pointer z-40 relative"
             }
           >
             {fav ? (
               <AiOutlineClose size={20} title="Close Selection" />
             ) : (
-              <AiOutlineHeart
-                onClick={() => setFav(!fav)}
-                size={20}
-                title="Your Selection"
-              />
+              <>
+                <AiOutlineHeart
+                  onClick={() => setFav(!fav)}
+                  size={20}
+                  title="Your Selection"
+                />
+                {favSection.length > 0 ? (
+                  <div className="font-sans text-sm font-bold absolute top-2 left-5 text-green-900 rounded-full">
+                    {favSection.length}
+                  </div>
+                ) : null}
+              </>
             )}
           </button>
         </div>

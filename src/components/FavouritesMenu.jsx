@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useFavSection } from "../context/FavContext";
+import Item from "./Item";
 
 const FavouritesMenu = ({ fav, setFav }) => {
+  const { favSection, removeItem } = useFavSection();
+
   return (
     <div
       onClick={() => setFav(false)}
@@ -26,10 +30,31 @@ const FavouritesMenu = ({ fav, setFav }) => {
             </p>
           </li>
           <li className="py-6 flex justify-center">
-            <p className="text-sm">
-              Your list is currently empty. Explore the collections to create
-              your selection.
-            </p>
+            {favSection.length === 0 ? (
+              <p className="text-sm">
+                Your list is currently empty. Explore the collections to create
+                your selection.
+              </p>
+            ) : (
+              <div>
+                {favSection.map((item) => {
+                  const isInFavSection = favSection.some(
+                    (i) => i.id === item.id
+                  );
+                  return (
+                    <div
+                      item={item}
+                      isInFavSection={isInFavSection}
+                      removeItem={removeItem}
+                      key={item.id}
+                      className="font-sans font-semibold"
+                    >
+                      {item.name}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </li>
           <li className="flex justify-center">
             <Link

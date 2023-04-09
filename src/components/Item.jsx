@@ -3,14 +3,16 @@ import { AiFillHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 
-const Item = ({ item }) => {
+const Item = ({ item, isInFavSection, addItem, removeItem }) => {
+  //  Intersection Observer's functionallity with the useInView hook
   const { ref: myRef, inView: myElementIsVisible } = useInView();
 
-  //  Intersection Observer's functionallity without the hook
+  //  Intersection Observer's functionallity without the useInView hook
 
   // const myRef = useRef();
   // const [myElementIsVisible, setMyElementIsVisible] = useState();
   // console.log(myElementIsVisible);
+
   // useEffect(() => {
   //   // console.log("myRef", myRef.current);
   //   const observer = new IntersectionObserver((entries) => {
@@ -22,23 +24,39 @@ const Item = ({ item }) => {
   // }, []);
 
   return (
-    <Link
+    <div
       ref={myRef}
-      to={"/watches/" + item.id}
       className={
         myElementIsVisible
           ? "flex rounded-sm justify-center items-center bg-white shadow-md h-80 group cursor-pointer relative animate-animateOpacity"
           : "flex rounded-sm justify-center items-center bg-white shadow-md h-80 group cursor-pointer relative"
       }
     >
-      <div className="absolute top-2 left-2 w-8 h-8 rounded-full flex justify-center items-center bg-[#dddddd] hover:bg-green-800 transition-all">
-        <AiFillHeart
-          size={18}
-          title="Add To Selection"
-          className="text-white"
-        />
+      <div
+        className={`absolute top-2 left-2 w-8 h-8 rounded-full flex justify-center items-center bg-[#dddddd] hover:bg-green-800 transition-all ${
+          isInFavSection ? "bg-green-800" : null
+        }`}
+      >
+        {isInFavSection ? (
+          <AiFillHeart
+            size={18}
+            title="Remove From Selection"
+            onClick={() => removeItem(item.id)}
+            className="text-white"
+          />
+        ) : (
+          <AiFillHeart
+            size={18}
+            title="Add To Selection"
+            onClick={() => addItem(item)}
+            className="text-white"
+          />
+        )}
       </div>
-      <div className="flex flex-col justify-center w-full items-center">
+      <Link
+        to={"/watches/" + item.id}
+        className="flex flex-col justify-center w-full items-center"
+      >
         <div className="h-52 w-[70%] flex justify-center items-center mb-4 p-4">
           <img
             className="w-auto h-auto max-h-52 group-hover:scale-105 transition-all duration-300"
@@ -52,8 +70,8 @@ const Item = ({ item }) => {
           </div>
           <div className="font-sans text-sm">{item.description}</div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 
