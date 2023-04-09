@@ -6,7 +6,7 @@ export const watches = [
     price: 100000,
     img: "/images/Screenshot_1.jpg",
     numberOfUnits: 1,
-    category: "Classic Watches",
+    category: "Classic",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const watches = [
     price: 85000,
     img: "/images/Screenshot_2.jpg",
     numberOfUnits: 1,
-    category: "Classic Watches",
+    category: "Classic",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const watches = [
     price: 80000,
     img: "/images/Screenshot_10.jpg",
     numberOfUnits: 1,
-    category: "Classic Watches",
+    category: "Classic",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const watches = [
     price: 82000,
     img: "/images/Screenshot_9.jpg",
     numberOfUnits: 1,
-    category: "Classic Watches",
+    category: "Classic",
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const watches = [
     price: 75000,
     img: "/images/Screenshot_8.jpg",
     numberOfUnits: 1,
-    category: "Classic Watches",
+    category: "Classic",
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export const watches = [
     price: 100000,
     img: "/images/Screenshot_7.jpg",
     numberOfUnits: 1,
-    category: "Classic Watches",
+    category: "Classic",
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ export const watches = [
     price: 65000,
     img: "/images/Screenshot_6.jpg",
     numberOfUnits: 1,
-    category: "Professional Watches",
+    category: "Professional",
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ export const watches = [
     price: 70000,
     img: "/images/Screenshot_5.jpg",
     numberOfUnits: 1,
-    category: "Professional Watches",
+    category: "Professional",
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ export const watches = [
     price: 60000,
     img: "/images/Screenshot_5.jpg",
     numberOfUnits: 1,
-    category: "Professional Watches",
+    category: "Professional",
   },
   {
     id: 10,
@@ -87,6 +87,6 @@ export const watches = [
     price: 50000,
     img: "/images/Screenshot_4.jpg",
     numberOfUnits: 1,
-    category: "Professional Watches",
+    category: "Professional",
   },
 ];

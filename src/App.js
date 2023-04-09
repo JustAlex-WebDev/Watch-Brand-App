@@ -7,6 +7,7 @@ import Watches from "./routes/Watches";
 import Home from "./routes/Home";
 import Watch from "./routes/Watch";
 import ScrollToTop from "./components/ScrollToTop";
+import FavContextProvider from "./context/FavContext";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -37,24 +38,26 @@ function App() {
 
   return (
     <>
-      {loading ? (
-        <AnimationOnLoad />
-      ) : (
-        <div className="animate-animateOpacity w-full">
-          <Navbar />
-          <ScrollToTop
-            scrollToTopIndicator={scrollToTop}
-            scrollToTopFunction={scrollToTopFunction}
-          />
-          <AnimatePresence initial={false}>
-            <Routes location={location} key={location.pathName}>
-              <Route path="/" element={<Home />} />
-              <Route path="/watches" element={<Watches />} />
-              <Route path="/watches/:id" element={<Watch />} />
-            </Routes>
-          </AnimatePresence>
-        </div>
-      )}
+      <FavContextProvider>
+        {loading ? (
+          <AnimationOnLoad />
+        ) : (
+          <div className="animate-animateOpacity w-full">
+            <Navbar />
+            <ScrollToTop
+              scrollToTopIndicator={scrollToTop}
+              scrollToTopFunction={scrollToTopFunction}
+            />
+            <AnimatePresence initial={false}>
+              <Routes location={location} key={location.pathName}>
+                <Route path="/" element={<Home />} />
+                <Route path="/watches" element={<Watches />} />
+                <Route path="/watches/:id" element={<Watch />} />
+              </Routes>
+            </AnimatePresence>
+          </div>
+        )}
+      </FavContextProvider>
     </>
   );
 }
