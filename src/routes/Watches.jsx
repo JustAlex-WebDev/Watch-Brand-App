@@ -5,6 +5,7 @@ import { watches } from "../data";
 import Item from "../components/Item";
 import { useFavSection } from "../context/FavContext";
 
+ // Local Storage Test
 // const favouritesData = JSON.parse(
 //   window.localStorage.getItem("MY_FAVOURITES_STATE")
 // );
@@ -14,7 +15,6 @@ const Watches = () => {
   const { favSection, addItem, removeItem } = useFavSection();
 
   // Local Storage Test
-
   // const [favourites, setFavourites] = useState(false);
 
   // useEffect(() => {
@@ -67,18 +67,6 @@ const Watches = () => {
             <div className="hover:text-green-800">Professional</div>
           </div>
         </m.div>
-
-        {/* Save to local storage button */}
-
-        {/* <div className="flex flex-col justify-center items-center gap-4">
-          <button
-            onClick={() => setFavourites(!favourites)}
-            className="bg-green-800 text-white p-2 hover:opacity-50 tracking-wider rounded-lg"
-          >
-            Save Button
-          </button>
-          {favourites ? <div>saved</div> : <div>not saved</div>}
-        </div> */}
 
         <m.div
           initial={{ opacity: 0 }}
