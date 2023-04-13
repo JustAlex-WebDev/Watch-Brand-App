@@ -60,9 +60,9 @@ const FavouritesMenu = ({ fav, setFav }) => {
                     <span>items</span>
                   )}
                 </div>
-                <div className="relative overflow-hidden w-56 m-auto group">
+                <div className="relative overflow-hidden w-60 m-auto">
                   <div
-                    className="h-48 w-[500%] flex transition-transform ease-out duration-500"
+                    className="h-56 w-[500%] flex transition-transform ease-out duration-500"
                     style={{ transform: `translateX(-${currentIndex * 20}%)` }}
                   >
                     {favSection.map((item) => {
@@ -75,20 +75,22 @@ const FavouritesMenu = ({ fav, setFav }) => {
                           isInFavSection={isInFavSection}
                           removeItem={removeItem}
                           key={item.id}
+                          setFav={setFav}
+                          goToPrev={goToPrev}
                         />
                       );
                     })}
                   </div>
-                  <div className="absolute inset-0 flex items-center justify-between">
+                  <div className="absolute flex items-center justify-between top-[50%]">
                     <button
                       onClick={goToPrev}
-                      className="p-1.5 rounded-full border hover:opacity-50 cursor-pointer transition-all"
+                      className="cursor-pointer hover:opacity-50 absolute z-10 p-1.5 border rounded-full transition-all"
                     >
                       <AiOutlineArrowLeft size={17} />
                     </button>
                     <button
                       onClick={goToNext}
-                      className="p-1.5 rounded-full border hover:opacity-50 cursor-pointer transition-all"
+                      className="cursor-pointer hover:opacity-50 absolute left-52 z-10 p-1.5 border rounded-full transition-all"
                     >
                       <AiOutlineArrowRight size={17} />
                     </button>
