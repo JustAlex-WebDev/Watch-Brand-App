@@ -11,7 +11,7 @@ const PageTransition = () => {
       className="text-grey-900 bg-green-800 absolute top-0 left-0 w-full h-full lg:px-48 px-16"
     >
       <div className="main-div flex justify-center items-center h-full">
-        <div className="overflow-hidden text-9xl flex animate-animatePulse tracking-widest">
+        <div className="overflow-hidden text-4xl xxsm:text-6xl sm:text-7xl lg:text-9xl flex animate-animatePulse tracking-widest">
           <m.div
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: "0%", opacity: 1 }}
