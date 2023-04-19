@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
 import { watches } from "../data";
 
 const SearchModal = ({
@@ -10,6 +11,7 @@ const SearchModal = ({
   const [search, setSearch] = useState("");
   const [searchData, setSearchData] = useState([]);
   const [selectedItem, setSelectedItem] = useState(-1);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -26,7 +28,9 @@ const SearchModal = ({
       ) {
         setSelectedItem((prev) => prev + 1);
       } else if (e.key === "Enter" && selectedItem >= 0) {
-        // window.open(searchData[selectedItem].show.url)
+        navigate("/watches/" + searchData[selectedItem].id);
+        setOpenSearchModal(false);
+        setSearch("");
       }
     } else {
       setSelectedItem(-1);
@@ -88,14 +92,16 @@ const SearchModal = ({
               <div
                 className={
                   search !== ""
-                    ? "w-[100%] rounded-2xl border-2 border-gray bg-white shadow-2xl text-center overflow-hidden"
-                    : "w-[100%] rounded-2xl bg-white shadow-2xl text-center"
+                    ? "w-[100%] flex flex-col rounded-2xl border-2 border-gray bg-white shadow-2xl text-center overflow-hidden"
+                    : "w-[100%] flex flex-col rounded-2xl bg-white shadow-2xl text-center"
                 }
               >
                 {searchData.slice(0, 5).map((item, index) => {
                   return (
-                    <div
+                    <Link
+                      to={"/watches/" + item.id}
                       key={index}
+                      onClick={() => setOpenSearchModal(false) & setSearch("")}
                       className={
                         selectedItem === index
                           ? "font-sans text-sm p-2 bg-green-800 text-white cursor-pointer"
@@ -103,7 +109,7 @@ const SearchModal = ({
                       }
                     >
                       {item.name}
-                    </div>
+                    </Link>
                   );
                 })}
               </div>
