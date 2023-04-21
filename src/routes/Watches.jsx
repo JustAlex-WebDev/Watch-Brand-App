@@ -5,6 +5,7 @@ import { watches } from "../data";
 import Item from "../components/Item";
 import { useFavSection } from "../context/FavContext";
 import PageTransition from "../components/PageTransition";
+import Filter from "../components/Filter";
 
 // Local Storage Test
 // const favouritesData = JSON.parse(
@@ -14,6 +15,20 @@ import PageTransition from "../components/PageTransition";
 const Watches = () => {
   const [items, setItems] = useState(watches);
   const { favSection, addItem, removeItem } = useFavSection();
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [filteredItems, setFilteredItems] = useState(items);
+
+  const handleFilter = (category) => {
+    const filtered = watches.filter((item) => {
+      return item.category === category;
+    });
+    if (category === "Classic") {
+      setActiveCategory("Classic");
+    } else if (category === "Professional") {
+      setActiveCategory("Professional");
+    }
+    setFilteredItems(filtered);
+  };
 
   // Local Storage Test
   // const [favourites, setFavourites] = useState(false);
@@ -61,23 +76,13 @@ const Watches = () => {
             </m.h1>
           </div>
 
-          <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 4, duration: 1 }}
-            className="flex justify-center items-center mb-12 gap-8 font-bold cursor-pointer"
-          >
-            <div className="flex justify-center items-center gap-2">
-              <div className="text-green-800 hover:text-green-800">All</div>
-              <div className="w-2 h-2 bg-green-800 rounded-full"></div>
-            </div>
-            <div>
-              <div className="hover:text-green-800">Classic</div>
-            </div>
-            <div>
-              <div className="hover:text-green-800">Professional</div>
-            </div>
-          </m.div>
+          <Filter
+            items={items}
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
+            setFilteredItems={setFilteredItems}
+            handleFilter={handleFilter}
+          />
 
           <m.div
             initial={{ opacity: 0 }}
@@ -85,7 +90,7 @@ const Watches = () => {
             transition={{ delay: 4.25, duration: 1 }}
             className="mt-16 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2 justify-between items-center w-full sm:w-[80%] m-auto p-2"
           >
-            {items.map((item) => {
+            {filteredItems.map((item) => {
               const isInFavSection = favSection.some((i) => i.id === item.id);
               return (
                 <Item
