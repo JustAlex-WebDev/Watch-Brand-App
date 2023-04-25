@@ -48,15 +48,7 @@ const Watches = () => {
 
   return (
     <>
-      <m.div
-        initial={{ y: "100%" }}
-        animate={{ y: "0%" }}
-        transition={{ duration: 0.75, ease: "easeOut" }}
-        exit={{ opacity: 1 }}
-        className="text-grey-900 bg-green-800 absolute top-0 left-0 w-full h-full lg:px-48 px-16"
-      >
-        <PageTransition />
-      </m.div>
+      <PageTransition />
       <m.div
         initial={{ y: "100%" }}
         animate={{ y: "0%" }}
