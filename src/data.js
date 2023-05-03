@@ -22,9 +22,11 @@ export const watches = [
     name: "OYSTER PERPETUAL 41",
     description: "Oyster, 41 mm, Oystersteel",
     price: 80000,
-    img: "/images/Screenshot_10.jpg",
+    img: "/images/Screenshot_10.png",
     numberOfUnits: 1,
     category: "Classic",
+    darkImg: "/images/Screenshot_11.png",
+    variation: "/images/variation_10.jpg",
   },
   {
     id: 4,
