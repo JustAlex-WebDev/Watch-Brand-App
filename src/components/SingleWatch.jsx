@@ -11,43 +11,33 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
     <>
       <div className="sticky -top-[25rem] md:-top-[14rem] left-0 w-full h-full bg-white duration-500">
         <div
-          className={`${
-            theme
-              ? "bg-black mt-28 pt-8 duration-500"
-              : "bg-white mt-28 pt-8 duration-500"
+          className={`mt-20 pt-[3.5rem] duration-500 ${
+            theme ? `bg-black` : `bg-white`
           }`}
         >
           <main className="main-div h-full">
             <div className="flex justify-between">
               <span
-                className={`${
-                  theme
-                    ? "font-bold font-sans tracking-tight text-sm p-4 text-white duration-500"
-                    : "font-bold font-sans tracking-tight text-sm p-4 duration-500"
+                className={`font-bold font-sans tracking-tight text-sm p-4 duration-500 ${
+                  theme ? `text-white` : ``
                 }`}
               >
                 New model
               </span>
               {theme ? (
-                <div
-                  className={`${
-                    theme
-                      ? "flex items-center cursor-pointer hover:text-green-800 text-white duration-500"
-                      : "flex items-center cursor-pointer hover:text-green-800 duration-500"
-                  }`}
-                >
+                <div className="flex items-center">
                   <HiSun
                     onClick={() => setTheme(false)}
                     title="Light Mode"
-                    className="text-primary text-xl mr-4"
+                    className="text-primary text-xl mr-4 text-white cursor-pointer hover:text-green-800 duration-500"
                   />
                 </div>
               ) : (
-                <div className="flex items-center cursor-pointer hover:text-green-800">
+                <div className="flex items-center">
                   <HiMoon
                     onClick={() => setTheme(true)}
                     title="Dark Mode"
-                    className="text-primary text-xl mr-4"
+                    className="text-primary text-xl mr-4 cursor-pointer hover:text-green-800"
                   />
                 </div>
               )}
@@ -77,10 +67,8 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
                     )}
                   </div>
                   <div
-                    className={`${
-                      theme
-                        ? "text-sm font-bold text-white duration-500"
-                        : "text-sm font-bold duration-500"
+                    className={`text-sm font-bold duration-500 ${
+                      theme ? `text-white` : ``
                     }`}
                   >
                     {isInFavSection ? (
@@ -103,28 +91,22 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
                   </div>
                 </div>
                 <div
-                  className={`${
-                    theme
-                      ? "font-sans font-bold text-3xl mb-2 text-white duration-500"
-                      : "font-sans font-bold text-3xl mb-2 duration-500"
+                  className={`font-sans font-bold text-3xl mb-2 duration-500 ${
+                    theme ? `text-white` : ``
                   }`}
                 >
                   {item.name}
                 </div>
                 <div
-                  className={`${
-                    theme
-                      ? "font-sans text-lg text-white duration-500"
-                      : "font-sans text-lg duration-500"
+                  className={`font-sans text-lg duration-500 ${
+                    theme ? `text-white` : ``
                   }`}
                 >
                   {item.description}
                 </div>
                 <div
-                  className={`${
-                    theme
-                      ? "flex items-center gap-2 text-white duration-500"
-                      : "flex items-center gap-2 duration-500"
+                  className={`flex items-center gap-2 duration-500 ${
+                    theme ? `text-white` : ``
                   }`}
                 >
                   <div className="font-sans text-lg">Price on request</div>
@@ -152,35 +134,37 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
                   )}
                 </div>
               </div>
-              <div className="hidden xxs:block">
+              <div className="hidden absolute right-0 xs:block md:relative">
                 <div
-                  className={`${
-                    theme
-                      ? "hidden flex-col justify-center items-center mr-12 md:mr-0 duration-500"
-                      : "flex flex-col justify-center items-center mr-12 md:mr-0 duration-500"
+                  className={`relative flex-col justify-center items-center mr-12 md:mr-0 opacity-100 duration-500 ${
+                    theme ? `hidden opacity-0` : `flex opacity-100`
                   }`}
                 >
                   <img
-                    className="w-16 md:w-20 h-auto hover:cursor-pointer"
+                    className="w-20 md:w-20 h-auto hover:cursor-pointer"
                     src={item.variation}
                     title="View Variations"
                     alt=""
                   />
-                  <div className="text-xs font-sans tracking-wide font-semibold">
+                  <div className="absolute bottom-0 text-center text-xs font-sans tracking-wide font-semibold">
                     View variations
                   </div>
                 </div>
               </div>
             </div>
             <div className="flex flex-col justify-center items-center mt-16 pb-24">
-              <span className="font-bold font-sans tracking-tight text-sm p-4 px-8 bg-green-800 rounded-3xl text-white hover:opacity-50 hover:cursor-pointer">
+              <span
+                className={`font-bold font-sans tracking-tight text-sm p-4 px-8 rounded-3xl shadow-2xl hover:cursor-pointer duration-300 ${
+                  theme
+                    ? `bg-white text-black hover:text-green-800`
+                    : `bg-green-800 text-white hover:opacity-50`
+                }`}
+              >
                 Configure
               </span>
               <div
-                className={`${
-                  theme
-                    ? "mt-16 animate-pulseduration-500 text-white"
-                    : "mt-16 animate-pulseduration-500"
+                className={`mt-16 animate-pulseduration-500 ${
+                  theme ? `text-white` : ``
                 }`}
               >
                 <CgMoveDown size={28} />
