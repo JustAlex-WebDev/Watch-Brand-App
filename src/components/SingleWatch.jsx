@@ -3,20 +3,27 @@ import { AiFillHeart } from "react-icons/ai";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { HiSun, HiMoon } from "react-icons/hi";
 import { CgMoveDown } from "react-icons/cg";
+import { motion as m } from "framer-motion";
+import Footer from "./Footer";
 
 const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
   const [theme, setTheme] = useState(false);
 
   return (
     <>
-      <div className="sticky -top-[25rem] md:-top-[14rem] left-0 w-full h-full bg-white duration-500">
+      <div className="sticky -top-[100%] left-0 w-full h-full bg-white duration-500">
         <div
           className={`mt-20 pt-[3.5rem] duration-500 ${
             theme ? `bg-black` : `bg-white`
           }`}
         >
           <main className="main-div h-full">
-            <div className="flex justify-between">
+            <m.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.75, delay: 3.5, ease: "easeOut" }}
+              className="flex justify-between"
+            >
               <span
                 className={`font-bold font-sans tracking-tight text-sm p-4 duration-500 ${
                   theme ? `text-white` : ``
@@ -41,8 +48,13 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
                   />
                 </div>
               )}
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 justify-between items-center w-full gap-0 md:gap-4 mt-16 p-4">
+            </m.div>
+            <m.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.75, delay: 4, ease: "easeOut" }}
+              className="grid grid-cols-2 md:grid-cols-3 justify-between items-center w-full gap-0 md:gap-4 mt-16 p-4"
+            >
               <div className="col-span-3 md:col-span-1 row-start-2 md:row-start-1">
                 <div className="flex items-center gap-2 mb-4 mt-8">
                   <div
@@ -151,9 +163,12 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </m.div>
             <div className="flex flex-col justify-center items-center mt-16 pb-24">
-              <span
+              <m.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.75, delay: 4.5, ease: "easeOut" }}
                 className={`font-bold font-sans tracking-tight text-sm p-4 px-8 rounded-3xl shadow-2xl hover:cursor-pointer duration-300 ${
                   theme
                     ? `bg-white text-black hover:text-green-800`
@@ -161,24 +176,44 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
                 }`}
               >
                 Configure
-              </span>
-              <div
+              </m.span>
+              <m.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.75, delay: 4.75, ease: "easeOut" }}
                 className={`mt-16 animate-pulseduration-500 ${
                   theme ? `text-white` : ``
                 }`}
               >
                 <CgMoveDown size={28} />
-              </div>
+              </m.div>
             </div>
           </main>
         </div>
       </div>
-      <div className="sticky top-0 w-full flex justify-center h-[100vh] bg-black text-white">
-        wadwa
+      <div className="sticky top-0 w-full flex justify-center items-center h-[100vh] bg-gradient-to-tr from-[#252525] to-[#b3b3b3]">
+        <div className="flex flex-col w-[80%] max-w-[58rem] items-start">
+          <div className="uppercase text-[#d6d6d6] tracking-widest text-xs sm:text-sm md:text-lg">
+            Make the world your Oyster
+          </div>
+          <div className="text-white tracking-widest text-lg xxs:text-2xl sm:text-4xl md:text-6xl font-bold">
+            The <span className="text-[#d6d6d6]">Oyster Perpetual 41</span> with{" "}
+            <span className="text-[#d6d6d6]">a silver </span>dial and an{" "}
+            <span className="text-[#d6d6d6]">Oyster</span> bracelet.
+          </div>
+        </div>
       </div>
       <div className="sticky top-0 w-full flex justify-center h-[100vh] bg-blue-300">
         wadwa
       </div>
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.75, delay: 5, ease: "easeOut" }}
+        className="sticky"
+      >
+        <Footer />
+      </m.div>
     </>
   );
 };
