@@ -203,8 +203,17 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
           </div>
         </div>
       </div>
-      <div className="sticky top-0 w-full flex justify-center h-[100vh] bg-blue-300">
-        wadwa
+      <div className="sticky top-0 w-full flex justify-center items-center h-[100vh] bg-gradient-to-tr from-[#4e4e4e] to-[#b3b3b3]">
+        <div className="flex flex-col w-[80%] max-w-[58rem] items-start">
+          <div className="uppercase text-[#d6d6d6] tracking-widest text-xs sm:text-sm md:text-lg">
+            Make the world your Oyster
+          </div>
+          <div className="text-white tracking-widest text-lg xxs:text-2xl sm:text-4xl md:text-6xl font-bold">
+            The <span className="text-[#d6d6d6]">Oyster Perpetual 41</span> with{" "}
+            <span className="text-[#d6d6d6]">a silver </span>dial and an{" "}
+            <span className="text-[#d6d6d6]">Oyster</span> bracelet.
+          </div>
+        </div>
       </div>
       <m.div
         initial={{ opacity: 0 }}
