@@ -52,7 +52,7 @@ const Watches = () => {
       <m.div
         initial={{ y: "100%", display: "none" }}
         animate={{ y: "0%", display: "block" }}
-        transition={{ duration: 0.75, delay: 3, ease: "easeOut" }}
+        transition={{ duration: 0.75, delay: 2.5, ease: "easeOut" }}
         exit={{ opacity: 1 }}
         className="absolute top-0 left-0 w-full h-full bg-[#fff] lg:px-48 px-16"
       >
@@ -61,7 +61,7 @@ const Watches = () => {
             <m.h1
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 3.75, duration: 1 }}
+              transition={{ delay: 3.25, duration: 1 }}
               className="text-3xl lg:text-4xl text-center tracking-widest"
             >
               TIMELESS WATCHES
@@ -79,7 +79,7 @@ const Watches = () => {
           <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 4.25, duration: 1 }}
+            transition={{ delay: 3.75, duration: 1 }}
             className="mt-16 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2 justify-between items-center w-full sm:w-[80%] m-auto p-2"
           >
             {filteredItems.map((item) => {
@@ -99,7 +99,7 @@ const Watches = () => {
         <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 4.5, duration: 1 }}
+          transition={{ delay: 4, duration: 1 }}
         >
           <Footer />
         </m.div>

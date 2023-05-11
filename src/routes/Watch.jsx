@@ -17,7 +17,7 @@ const Watch = () => {
       <m.div
         initial={{ y: "100%", display: "none" }}
         animate={{ y: "0%", display: "block" }}
-        transition={{ duration: 0.75, delay: 3, ease: "easeOut" }}
+        transition={{ duration: 0.75, delay: 2.5, ease: "easeOut" }}
         exit={{ opacity: 1 }}
         className="absolute top-0 left-0 w-full h-full bg-[#fff]"
       >
