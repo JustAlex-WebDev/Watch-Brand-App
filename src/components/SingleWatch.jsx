@@ -5,6 +5,7 @@ import { HiSun, HiMoon } from "react-icons/hi";
 import { CgMoveDown } from "react-icons/cg";
 import { motion as m } from "framer-motion";
 import Footer from "./Footer";
+import { Parallax } from "react-parallax";
 
 const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
   const [theme, setTheme] = useState(false);
@@ -121,7 +122,7 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
                     theme ? `text-white` : ``
                   }`}
                 >
-                  <div className="font-sans text-lg">Price on request</div>
+                  <div className="font-sans text-lg">{item.price}</div>
                   <AiOutlineInfoCircle
                     className="cursor-pointer hover:text-green-800"
                     title="Info"
@@ -181,7 +182,7 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.75, delay: 4.75, ease: "easeOut" }}
-                className={`mt-16 animate-pulseduration-500 ${
+                className={`mt-16 animate-pulse duration-500 ${
                   theme ? `text-white` : ``
                 }`}
               >

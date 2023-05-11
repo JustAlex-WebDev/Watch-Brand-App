@@ -11,7 +11,7 @@ const Home = () => {
       <m.div
         initial={{ y: "-100%" }}
         animate={{ y: "0%" }}
-        transition={{ duration: 0.75, delay: 3, ease: "easeOut" }}
+        transition={{ duration: 0.75, delay: 2.5, ease: "easeOut" }}
         exit={{ opacity: 1 }}
         className="text-grey-900 bg-[#fff] absolute top-0 left-0 w-full h-full p-4"
       >
@@ -20,7 +20,7 @@ const Home = () => {
             <m.h1
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: "0%", opacity: 1 }}
-              transition={{ delay: 3.75, duration: 0.75 }}
+              transition={{ delay: 3.25, duration: 0.75 }}
               className="text-4xl xs:text-5xl lg:text-6xl text-center tracking-widest"
             >
               TIMELESS
@@ -29,7 +29,7 @@ const Home = () => {
           <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 4.25, duration: 0.75 }}
+            transition={{ delay: 3.75, duration: 0.75 }}
             className="flex flex-col gap-6 w-[80%] max-w-[600px] m-auto text-center"
           >
             <div className="text-base xs:text-lg lg:text-xl font-semibold">
@@ -38,7 +38,7 @@ const Home = () => {
             <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 4.5, duration: 0.75 }}
+              transition={{ delay: 4, duration: 0.75 }}
               className="text-sm xs:text-base lg:text-lg text-justify"
             >
               Explore the Timeless collection of prestigious, high-precision
@@ -50,7 +50,7 @@ const Home = () => {
             <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 4.75, duration: 0.75 }}
+              transition={{ delay: 4.25, duration: 0.75 }}
               className="flex justify-center items-center gap-8 text-sm xs:text-base"
             >
               <Link
@@ -68,7 +68,7 @@ const Home = () => {
         <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 5, duration: 0.5 }}
+          transition={{ delay: 4.5, duration: 0.5 }}
         >
           <Footer />
         </m.div>
