@@ -5,10 +5,12 @@ import { HiSun, HiMoon } from "react-icons/hi";
 import { CgMoveDown } from "react-icons/cg";
 import { motion as m } from "framer-motion";
 import Footer from "./Footer";
-import { Parallax } from "react-parallax";
+import InfoModal from "./InfoModal";
+// import { Parallax } from "react-parallax";
 
 const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
   const [theme, setTheme] = useState(false);
+  const [openInfoModal, setOpenInfoModal] = useState(false);
 
   return (
     <>
@@ -124,8 +126,13 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
                 >
                   <div className="font-sans text-lg">{item.price}</div>
                   <AiOutlineInfoCircle
+                    onClick={() => setOpenInfoModal(true)}
                     className="cursor-pointer hover:text-green-800"
                     title="Info"
+                  />
+                  <InfoModal
+                    openInfoModal={openInfoModal}
+                    setOpenInfoModal={setOpenInfoModal}
                   />
                 </div>
               </div>
