@@ -214,12 +214,26 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
       <div className="sticky top-0 w-full flex justify-center items-center h-[100vh] bg-gradient-to-tr from-[#4e4e4e] to-[#b3b3b3]">
         <div className="flex flex-col w-[80%] max-w-[58rem] items-start">
           <div className="uppercase text-[#d6d6d6] tracking-widest text-xs sm:text-sm md:text-lg">
-            Make the world your Oyster
+            Silver dial
           </div>
           <div className="text-white tracking-widest text-lg xxs:text-2xl sm:text-4xl md:text-6xl font-bold">
-            The <span className="text-[#d6d6d6]">Oyster Perpetual 41</span> with{" "}
-            <span className="text-[#d6d6d6]">a silver </span>dial and an{" "}
-            <span className="text-[#d6d6d6]">Oyster</span> bracelet.
+            <span className="text-[#d6d6d6]">A watchmaking </span>
+            <br />
+            technique
+          </div>
+          <div className="text-white text-base sm:text-md md:text-xl py-4 mt-4">
+            The sunray finish creates delicate light reflections on many dials
+            in the Oyster Perpetual collection. It is obtained using masterful
+            brushing techniques that create grooves running outwards from the
+            centre of the dial.
+          </div>
+          <div className="text-white text-base sm:text-md md:text-xl py-4">
+            Light is diffused consistently along each engraving, creating a
+            characteristic subtle glow that moves depending on the position of
+            the wrist. Once the sunray finish has been completed, the dial
+            colour is applied using Physical Vapour Deposition or
+            electroplating. A light coat of varnish gives the dial its final
+            look.
           </div>
         </div>
       </div>
