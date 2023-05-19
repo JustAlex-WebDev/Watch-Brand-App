@@ -241,7 +241,7 @@ const SingleWatch = ({ item, isInFavSection, addItem, removeItem }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.75, delay: 5, ease: "easeOut" }}
-        className="sticky"
+        className="sticky text-white"
       >
         <Footer />
       </m.div>
