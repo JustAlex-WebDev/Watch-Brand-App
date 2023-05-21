@@ -4,6 +4,7 @@ import { AiOutlineArrowUp } from "react-icons/ai";
 const ScrollToTop = ({ scrollToTopIndicator, scrollToTopFunction }) => {
   return (
     <div
+      title="Go to Top"
       onClick={scrollToTopFunction}
       className={
         scrollToTopIndicator
